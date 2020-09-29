@@ -37,7 +37,7 @@ def count_users(tr):
 		if( next((item for item in list_users if item["uid"] == uid), None) == None):
 			list_users.append( {'name': name, 'uid': uid, 'tickets': 0} )
 
-# Считаем сколько у пользователя билетов
+# Считаем сколько у пользователей билетов
 def count_users_tickets(tr):
 	global list_users
 	for row_tr in tr:
