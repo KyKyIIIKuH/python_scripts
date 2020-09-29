@@ -91,7 +91,7 @@ count_users_tickets(tr)
 # Считаем сколько билетов у указанного пользователя по ID
 uid_select_ticket = count_users_tickets_sel(uid_select)
 
-# Выводим всех пользователей
+# Ходим по всему списку и ищем у кого больше билетов
 for row in list_users:
 	if(int(row["tickets"]) > int(uid_select_ticket["tickets"])):
 		list_users_ticket.append( {'name': row["name"], 'uid': row["uid"], 'tickets': row["tickets"]} )
@@ -101,3 +101,5 @@ print("Кол-во участников: %s\n" % (len(list_users)))
 print("У этих пользователей больше билетов чем у %s | Билетов: %s" % (uid_select_ticket["name"], uid_select_ticket["tickets"]))
 for row in list_users_ticket:
 	print("Имя: %s | Билетов: %s" % (row["name"], row["tickets"]))
+
+print("Ссылка на розыгрыш %s" % (url_page_event))
