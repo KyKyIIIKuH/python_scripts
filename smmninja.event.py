@@ -10,10 +10,10 @@ import requests
 import sys
 
 # ID VK пользователя, за которым хотим наблюдать
-uid_select = "ID VK"
+uid_select = "26887374"
 
 # Ссылка на розыгрыш smmninja
-url_page_event = "https://smmninja.ru/game-field/?event=ID"
+url_page_event = "https://smmninja.ru/game-field/?event=18154"
 
 # Список пользователей
 list_users = list()
@@ -37,7 +37,7 @@ def count_users(tr):
 		if( next((item for item in list_users if item["uid"] == uid), None) == None):
 			list_users.append( {'name': name, 'uid': uid, 'tickets': 0} )
 
-# Считаем сколько у пользователей билетов
+# Считаем сколько у пользователя билетов
 def count_users_tickets(tr):
 	global list_users
 	for row_tr in tr:
@@ -98,8 +98,11 @@ for row in list_users:
 
 print("Кол-во участников: %s\n" % (len(list_users)))
 
-print("У этих пользователей больше билетов чем у %s | Билетов: %s" % (uid_select_ticket["name"], uid_select_ticket["tickets"]))
+if(int(len(list_users_ticket)) > 0):
+	print("У этих пользователей больше билетов чем у %s | Билетов: %s" % (uid_select_ticket["name"], uid_select_ticket["tickets"]))
+else:
+	print("Имя: %s | Билетов: %s" % (uid_select_ticket["name"], uid_select_ticket["tickets"]))
 for row in list_users_ticket:
 	print("Имя: %s | Билетов: %s" % (row["name"], row["tickets"]))
 
-print("Ссылка на розыгрыш %s" % (url_page_event))
+print("\nСсылка на розыгрыш %s" % (url_page_event))
