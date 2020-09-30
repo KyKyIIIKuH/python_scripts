@@ -10,10 +10,10 @@ import requests
 import sys
 
 # ID VK пользователя, за которым хотим наблюдать
-uid_select = "26887374"
+uid_select = "ID VK"
 
 # Ссылка на розыгрыш smmninja
-url_page_event = "https://smmninja.ru/game-field/?event=18154"
+url_page_event = "https://smmninja.ru/game-field/?event=ID_EVENT"
 
 # Список пользователей
 list_users = list()
